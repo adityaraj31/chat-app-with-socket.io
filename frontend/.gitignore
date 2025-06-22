@@ -1,0 +1,41 @@
+# Node dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Next.js build output
+.next/
+out/
+
+# Tailwind CSS JIT cache
+.tailwind-cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*     # For environment-specific files like .env.local, .env.development
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode settings (optional)
+.vscode/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# PostCSS cache
+.postcssrc.*
+
+# Lock files (if you're not using them)
+pnpm-lock.yaml
+yarn.lock
+package-lock.json  # Only if not using npm lockfile in repo
+
+# Optional: output from test or linting tools
+coverage/
