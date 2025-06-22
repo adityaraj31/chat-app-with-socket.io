@@ -11,7 +11,7 @@ export default function HomePage() {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full bg-gradient-to-br from-blue-50 to-white overflow-hidden">
+      <div className="flex h-screen w-full bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden transition-all duration-300">
         <Sidebar onChatSelect={setSelectedChat} selectedChat={selectedChat} />
         <ChatContainer selectedChat={selectedChat} />
         <RightSidebar selectedChat={selectedChat} />
