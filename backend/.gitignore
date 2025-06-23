@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Optional: VSCode settings (if you don't want to share your local setup)
+.vscode/
+
+# Coverage and build output
+coverage/
+dist/
+build/
+
+# Others
+*.local
