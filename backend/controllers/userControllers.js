@@ -83,7 +83,7 @@ export const checkAuth = async (req, res) => {
         res.json({ success: false, message: "Authentication failed" });
     }
 }
-
+ 
 // Controller to update user profile details
 export const updateProfile = async (req, res) => {
     try {
@@ -96,7 +96,14 @@ export const updateProfile = async (req, res) => {
             updateProfile = await User.findByIdAndUpdate(userId, {bio, fullName}, {new: true})
         }
         else {
-            const upload = await cloudinary
-        }
+            const upload = await cloudinary.uploader.upload(profilePic);
+
+            updatedUser = await User.findByIdAndUpdate(userId, {profilePic: upload.secure_url, bio, fullName}, {new: true});
+        } 
+
+        res.json({success: true, user: updatedUser})
+    } catch (error) {
+        console.log(error.message);
+        res.json({success: false, message: error.message})
     }
 }

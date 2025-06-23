@@ -3,6 +3,7 @@ import "dotenv/config";
 import cors from 'cors';
 import http from "http";
 import connectDB from './lib/db.js';
+import userRouter from './routes/userRoutes.js';
 
 // Create an Express app and an HTTP server
 const app = express();
@@ -12,9 +13,12 @@ const server = http.createServer(app);
 app.use(cors());
 app.use(express.json());
 
+// Routes setup
 app.use("/api/status", (req, res) => {
     res.send("Server is live");
 });
+
+app.use("/api/auth", userRouter);
 
 // Connect to MongoDB using Mongoose
 const startServer = async () => {
